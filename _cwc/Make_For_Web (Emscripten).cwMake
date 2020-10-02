@@ -4,5 +4,5 @@
 >
 -{_sDynamic}="so"
 >
--#Run Build.cwc -{_wToolchain}= "VLianceTool/WebRT"
+-#Run Build_Emsc.cwc -{_wToolchain}= "VLianceTool/WebRT"
 -{vPreloadRc}="--preload-file Rc/@Rc/"
