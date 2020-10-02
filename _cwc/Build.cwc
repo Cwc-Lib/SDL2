@@ -142,10 +142,10 @@
 -c &{pSDL}thread/ -o {pObj}thread/
 -{vIncl} -{vFlag}
 |
-;-c {pSDL}thread/{sPlatform}/ -o {pObj}thread/{sPlatform}/
-;-{vIncl} -{vFlag}
+-c {pSDL}thread/windows/ -o {pObj}thread/windows/
+-{vIncl} -{vFlag}
 |
--c {pSDL}thread/generic/ -o {pObj}thread/generic/
+-c {pSDL}thread/generic/SDL_syscond.c -o {pObj}thread/generic/SDL_syscond.o
 -{vIncl} -{vFlag}
 >
 ;Build timer
@@ -179,7 +179,11 @@
 ;-o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/box2d.a
 >
 ;Build Test Example
--c {pSDL_test}testgl2.c  -o {pObj}test/testgl2.o
+-c {pSDL}test/ -o {pObj}test/
+-{vIncl} -{vFlag}
+|
+-c {pSDL_test}testgl2.c  -o {pObj}test_main.o
+-DHAVE_OPENGL
 -{vIncl} -{vFlag}
 >
 ;Generate executable
